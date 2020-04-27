@@ -8,6 +8,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="56dp"
+        android:layout_height="match_parent"
+        android:contentDescription="fleche"
+        app:srcCompat="@drawable/flechegauche" />
+
     <TextView
         android:id="@+id/textNomAppli"
         android:layout_width="match_parent"
