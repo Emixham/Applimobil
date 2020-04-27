@@ -1,4 +1,4 @@
-package fr.epsi.applimspr;
+package fr.epsi.applimobil;
 
 import android.content.Context;
 
@@ -17,12 +17,11 @@ import static org.junit.Assert.*;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
-
     @Test
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("fr.epsi.applimspr", appContext.getPackageName());
+        assertEquals("fr.epsi.applimobil", appContext.getPackageName());
     }
 }

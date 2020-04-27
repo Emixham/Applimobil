@@ -1,4 +1,4 @@
-package fr.epsi.applimspr;
+package fr.epsi.applimobil;
 
 import org.junit.Test;
 
