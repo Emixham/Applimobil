@@ -26,12 +26,12 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/buttonGrp"
+            android:id="@+id/buttonE1"
             android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#112A4A"
-            android:text="Groupe d'étudiants"
+            android:text="Etudiant 1"
             android:textColor="@android:color/white" />
 
         <View
@@ -41,12 +41,12 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/buttonListProduct"
+            android:id="@+id/buttonE2"
             android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="#112A4A"
-            android:text="Catégories de produits"
+            android:text="Etudiant 2"
             android:textColor="@android:color/white" />
 
         <View

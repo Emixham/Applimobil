@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ImageView imgBack = findViewById(R.id.imgBack);
+        imgBack.setVisibility(View.INVISIBLE);
         TextView title = findViewById(R.id.textNomAppli);
         title.setText("Epsi");
     Button buttonGrp = findViewById(R.id.buttonGrp);
