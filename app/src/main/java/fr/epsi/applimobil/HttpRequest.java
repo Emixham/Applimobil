@@ -66,7 +66,7 @@ public class HttpRequest  extends AsyncTask<Void,Void,Object> {
             InputStream in = new BufferedInputStream(client.getInputStream());
             String responseBody = convertStreamToString(in);
             JSONObject jsonObject = new JSONObject(responseBody);
-            return jsonObject.getJSONArray("items");
+            return jsonObject;//.getJSONArray("items");
         }
         finally {
             if(client != null) {

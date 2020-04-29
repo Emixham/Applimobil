@@ -1,0 +1,32 @@
+package fr.epsi.applimobil;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+public class CategorieAdapter extends ArrayAdapter<Categorie> {
+    public CategorieAdapter(@NonNull Context context, int resource, @NonNull Categorie[] objects) {
+        super(context, resource, objects);
+    }
+    @NonNull
+    @Override
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+
+        LayoutInflater li = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        convertView = li.inflate(R.layout.c_categories, null);
+
+        TextView textViewName=convertView.findViewById(R.id.textViewName);
+
+        Categorie categorie = getItem(position);
+
+        textViewName.setText(categorie.getTitle());
+        return convertView;
+    }
+}
