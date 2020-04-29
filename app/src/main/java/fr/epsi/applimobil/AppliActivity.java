@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class AppliActivity extends AppCompatActivity implements View.OnClickListener {
+public class AppliActivity extends Activity implements View.OnClickListener {
     protected Application app;
 
     @Override

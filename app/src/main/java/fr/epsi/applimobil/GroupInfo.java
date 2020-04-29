@@ -18,18 +18,19 @@ public class GroupInfo extends AppliActivity{
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_groupinfo);
-
             showBackBtn();
             TextView title = findViewById(R.id.textNomAppli);
             title.setText("Infos");
-            Log.i("test","test oncreate");
             Button buttonE1 = findViewById(R.id.buttonE1);
             buttonE1.setOnClickListener(new View.OnClickListener()
             {
                 @Override
                 public void onClick(View view){
-                    Log.i("test","click btn E1");
+
                     Intent intent = new Intent(GroupInfo.this, StudentInfo.class);
+                    intent.putExtra("nom","Thibault Linossier");
+                    intent.putExtra("email","t.linossier@epsi.fr");
+                    intent.putExtra("groupe","Avec Maxime Delcroix");
                     startActivity(intent);
                 }
             });
@@ -38,9 +39,11 @@ public class GroupInfo extends AppliActivity{
             {
                 @Override
                 public void onClick(View view){
-                    Log.i("test","click btn E2");
 
                     Intent intent = new Intent(GroupInfo.this, StudentInfo.class);
+                    intent.putExtra("nom","Maxime Delcroix");
+                    intent.putExtra("email","m.delcroix@epsi.fr");
+                    intent.putExtra("groupe","Avec Thibault Linossier");
                     startActivity(intent);
                 }
             });
