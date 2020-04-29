@@ -1,6 +1,7 @@
 package fr.epsi.applimobil;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,8 +14,8 @@ public class GroupInfo {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-            showBackBtn();
+            setContentView(R.layout.activity_groupinfo);
+            //showBackBtn();
             TextView title = findViewById(R.id.textNomAppli);
             title.setText("Infos");
             Button buttonE1 = findViewById(R.id.buttonE1);
@@ -22,15 +23,17 @@ public class GroupInfo {
             {
                 @Override
                 public void onClick(View view){
-                    setContentView(R.layout.activity_groupinfo);
+                    Log.i("test","click btn E1");
+                    setContentView(R.layout.activity_studentinfo);
                 }
             });
-            Button buttonE2 = findViewById(R.id.buttonGrp);
+            Button buttonE2 = findViewById(R.id.buttonE2);
             buttonE2.setOnClickListener(new View.OnClickListener()
             {
                 @Override
                 public void onClick(View view){
-                    setContentView(R.layout.activity_groupinfo);
+                    Log.i("test","click btn E2");
+                    setContentView(R.layout.activity_studentinfo);
                 }
             });
         }

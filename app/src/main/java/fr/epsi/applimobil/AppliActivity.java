@@ -3,6 +3,7 @@ package fr.epsi.applimobil;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -18,20 +19,18 @@ public class AppliActivity extends MainActivity implements View.OnClickListener 
         app = getApplication();
     }
 
-    protected void showBackBtn(){
-        ImageView imageView=findViewById(R.id.imgBack);
-        if(imageView!=null) {
-            imageView.setVisibility(View.VISIBLE);
-            imageView.setOnClickListener(this);
-        }
+    protected void showBackBtn() {
+        ImageView imageView = findViewById(R.id.imgBack);
+        Log.i("test", "clicklistener");
+        //imageView.setVisibility(View.VISIBLE);
+        imageView.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.imgBack:
-                finish();
-                break;
-        }
+        Log.i("test","click back btn");
+        finish();
+
     }
 }
+
+
