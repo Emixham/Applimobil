@@ -2,6 +2,7 @@ package fr.epsi.applimobil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
@@ -10,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppliActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view){
             Log.i("test","click btn grpInfo");
-            setContentView(R.layout.activity_groupinfo);
+
+            Intent intent = new Intent(MainActivity.this, GroupInfo.class);
+            startActivity(intent);
         }
     });
         Button buttonListProduct = findViewById(R.id.buttonListProduct);

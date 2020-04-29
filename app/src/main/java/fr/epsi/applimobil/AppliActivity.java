@@ -8,9 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 
-public class AppliActivity extends MainActivity implements View.OnClickListener {
+public class AppliActivity extends AppCompatActivity implements View.OnClickListener {
     protected Application app;
 
     @Override
@@ -19,17 +20,21 @@ public class AppliActivity extends MainActivity implements View.OnClickListener 
         app = getApplication();
     }
 
-    protected void showBackBtn() {
-        ImageView imageView = findViewById(R.id.imgBack);
-        Log.i("test", "clicklistener");
-        //imageView.setVisibility(View.VISIBLE);
-        imageView.setOnClickListener(this);
+    protected void showBackBtn(){
+        ImageView imageView=findViewById(R.id.imgBack);
+        if(imageView!=null) {
+            imageView.setVisibility(View.VISIBLE);
+            imageView.setOnClickListener(this);
+        }
     }
+
     @Override
     public void onClick(View v) {
-        Log.i("test","click back btn");
-        finish();
-
+        switch (v.getId()){
+            case R.id.imgBack:
+                finish();
+                break;
+        }
     }
 }
 
