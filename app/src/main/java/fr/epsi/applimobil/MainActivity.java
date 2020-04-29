@@ -24,6 +24,14 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_groupinfo);
         }
     });
+        Button buttonListProduct = findViewById(R.id.buttonListProduct);
+        buttonListProduct.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view){
+                setContentView(R.layout.activity_categories_liste);
+            }
+        });
     }
 
 }
