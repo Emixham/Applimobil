@@ -22,10 +22,9 @@ public class AppliActivity extends Activity implements View.OnClickListener {
 
     protected void showBackBtn(){
         ImageView imageView=findViewById(R.id.imgBack);
-        if(imageView!=null) {
-            imageView.setVisibility(View.VISIBLE);
-            imageView.setOnClickListener(this);
-        }
+
+        imageView.setVisibility(View.VISIBLE);
+        imageView.setOnClickListener(this);
     }
 
     @Override

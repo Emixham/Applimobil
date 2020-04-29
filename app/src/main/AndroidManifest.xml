@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".categoriesListe"></activity>
         <activity
             android:name=".SplashScreen"
@@ -22,6 +23,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".GroupInfo"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".StudentInfo"
             android:screenOrientation="portrait">
         </activity>
     </application>
