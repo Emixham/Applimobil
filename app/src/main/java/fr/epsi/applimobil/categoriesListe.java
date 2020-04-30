@@ -4,18 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 
 public class categoriesListe extends AppCompatActivity {
+
+    private CategorieAdapter categorieAdapter;
+    private ArrayList categoriesListe;
 
     public static void display(AppCompatActivity activity) {
        Intent intent = new Intent(activity, categoriesListe.class);
@@ -25,29 +32,40 @@ public class categoriesListe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories_liste);
-        ListView listView = findViewById(R.id.listView_categories) ;
-        HttpRequest HtttpR = new HttpRequest("", new HttpRequest.HttpAsyncTaskListener() {
-       @Override
-        public void webServiceDone(String result) {}
+        
+        categoriesListe = new ArrayList<>();
+        ListView listView = findViewById(R.id.listView_categories);
+        categorieAdapter = new CategorieAdapter(this, R.layout.c_categories, categoriesListe);
+        listView.setAdapter(categorieAdapter);
 
-        @Override
-        public void webServiceError(Exception e) {}
-        }) ;
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-        try {
-           JSONObject categoriesList = (JSONObject) HtttpR.call("http://djemam.com/epsi/categories.json");
-           this.initData(categoriesList);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               //ProductListActivity.display(CategorieActivity.this,categories.get(position));
+            }
+        });
+
+        String url = "http://djemam.com/epsi/categories.json";
+
+        new HttpRequest(url, new HttpRequest.HttpAsyncTaskListener() {
+            @Override
+            public void webServiceDone(String result) {
+                initData(result);
+            }
+
+            @Override
+            public void webServiceError(Exception e) {
+
+            }
+        }).execute();
 
     }
-    private void initData(JSONObject data) {
+    private void initData(String data) {
         try {
-
-            JSONArray jsonArray= data.getJSONArray("items");
+            JSONObject jsonObject;
+            jsonObject=new JSONObject(data);
+            JSONArray jsonArray= jsonObject.getJSONArray("items");
             for(int i=0;i<jsonArray.length();i++){
                 Categorie categorie =new Categorie(jsonArray.getJSONObject(i));
                 ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.activity_categories_liste,R.id.listView_categories , Collections.singletonList(categorie.title));

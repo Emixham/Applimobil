@@ -11,8 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 public class CategorieAdapter extends ArrayAdapter<Categorie> {
-    public CategorieAdapter(@NonNull Context context, int resource, @NonNull Categorie[] objects) {
+    public CategorieAdapter(@NonNull Context context, int resource, @NonNull ArrayList objects) {
         super(context, resource, objects);
     }
     @NonNull
@@ -22,7 +24,7 @@ public class CategorieAdapter extends ArrayAdapter<Categorie> {
         LayoutInflater li = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = li.inflate(R.layout.c_categories, null);
 
-        TextView textViewName=convertView.findViewById(R.id.textViewName);
+        TextView textViewName=convertView.findViewById(R.id.textView_cat);
 
         Categorie categorie = getItem(position);
 
