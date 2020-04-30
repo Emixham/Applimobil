@@ -44,7 +44,7 @@ public class categoriesListe extends AppliActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               //ProductListActivity.display(CategorieActivity.this,categoriesListe.get(position));
+               ProduitList.display(CategorieActivity.this,categoriesListe.get(position));
             }
         });
 

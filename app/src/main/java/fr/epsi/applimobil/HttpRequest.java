@@ -13,9 +13,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * cette classe fût en partie trouvé sur internet
- */
 
 public class HttpRequest  extends AsyncTask<Void,Void,Object> {
 
